@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductCategoryController as AdminProductCategoryController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +48,13 @@ Route::get('/', function(){
 Route::get('list_user', function(){
     return view('user.list_user');
 });
+
+// Route::get('list_product_category', function(){
+//     return view('admin.product.product_category.list_product_category');
+// });
+Route::get('list_product_category', [ProductCategoryController::class, 'index']);
+Route::get('admin/list_product_category', [AdminProductCategoryController::class, 'index']);
+
+Route::get('list_user_blade', function(){
+    return view('user.list_user_blade');
+} );
