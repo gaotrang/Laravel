@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ProductCategoryController as AdminProductCategoryController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,3 +59,17 @@ Route::get('admin/list_product_category', [AdminProductCategoryController::class
 Route::get('list_user_blade', function(){
     return view('user.list_user_blade');
 } );
+
+
+Route::get('list_user_blade',[ProductController::class, 'index']);
+
+Route::get('home', function(){
+    return view('basicWed.home');
+} );
+Route::get('about-us', function(){
+    return view('basicWed.aboutUs');
+} );
+Route::get('contact', function(){
+    return view('basicWed.contact');
+} );
+
