@@ -64,12 +64,41 @@ Route::get('list_user_blade', function(){
 Route::get('list_user_blade',[ProductController::class, 'index']);
 
 Route::get('home', function(){
-    return view('basicWed.home');
+    return view('client.pages.home');
 } );
-Route::get('about-us', function(){
-    return view('basicWed.aboutUs');
+Route::get('blog', function(){
+    return view('client.pages.blog');
 } );
 Route::get('contact', function(){
-    return view('basicWed.contact');
+    return view('client.pages.contact');
+} );
+Route::get('shop-details', function(){
+    return view('client.pages.shop-details');
+} );
+Route::get('shop-grid', function(){
+    return view('client.pages.shop-grid');
+} );
+Route::get('shoping-cart', function(){
+    return view('client.pages.shoping-cart');
+} );
+Route::get('check-out', function(){
+    return view('client.pages.check-out');
+} );
+Route::get('blog-details', function(){
+    return view('client.pages.blog-details');
 } );
 
+Route::get('admin', function(){
+    return view('admin.layout.master');
+} );
+
+Route::get('admin/blog', function(){
+    return view('admin.pages.blog');
+} );
+
+Route::get('admin/user', function(){
+    return view('admin.pages.user');
+} );
+Route::get('admin/product', function(){
+    return view('admin.pages.product');
+}) ->name('admin.product');
