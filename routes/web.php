@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProductCategoryController as AdminProductCategoryController;
+use App\Http\Controllers\Client\NguoiDungController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestController;
@@ -65,7 +66,7 @@ Route::get('list_user_blade',[ProductController::class, 'index']);
 
 Route::get('home', function(){
     return view('client.pages.home');
-} );
+})->name('home');
 Route::get('blog', function(){
     return view('client.pages.blog');
 } );
@@ -102,3 +103,13 @@ Route::get('admin/user', function(){
 Route::get('admin/product', function(){
     return view('admin.pages.product');
 }) ->name('admin.product');
+
+Route::get('login', function(){
+    return view('client.pages.login');
+} );
+Route::get('register', function(){
+    return view('client.pages.register');
+} );
+
+Route::post('luunguoidung', [NguoiDungController::class, 'luuNguoiDung'])->name('nguoidung.dangki');
+Route::post('dangnhap', [NguoiDungController::class, 'dangnhap'])->name('nguoidung.dangnhap');

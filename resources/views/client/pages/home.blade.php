@@ -6,6 +6,13 @@
     <section class="hero">
         <div class="container">
             <div class="row">
+                <div class="col-md-12">
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                </div>
                 <div class="col-lg-3">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
