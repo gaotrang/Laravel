@@ -1,7 +1,7 @@
 @extends('client.layout.master')
 
 @section('content')
-    <div class="container">
+    {{-- <div class="container">
         @if($errors->any())
             <div>
                 <ul>
@@ -11,7 +11,7 @@
                 </ul>
             </div>
             @endif
-    </div>
+    </div> --}}
       
           <!-- Login Form -->
           <form action="{{route ('nguoidung.dangki')}}" method="POST"
@@ -20,7 +20,6 @@
           margin: 0 20%;">
             {{-- chong CSRF Attak --}}
             @csrf
-            
             {{-- chong CSRF Attack --}}
             <input type="text" name="name" placeholder="Name" value="{{ old('name') }}">
             @error('email')

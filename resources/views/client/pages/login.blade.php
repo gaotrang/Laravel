@@ -13,16 +13,26 @@
                         <div class="form-group">
                             <label for="username" class="text-info">Email:</label><br>
                             <input type="email" name="email" id="email" class="form-control">
+                            @error('email')
+                                <div class="alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
                             <input type="password" name="password" id="password" class="form-control">
+                            @error('password')
+                                <div class="alert-danger">{{ $message }}</div>
+                            @enderror
+
+                            @if($message = Session::get('error'))
+                                <div class="alert-danger">{{$message}}</div>
+                            @endif
+                            
                         </div>
                         <div class="form-group">
                             <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Login">
                         </div>
-                        <div id="register-link" class="text-right" type="submit">Register here</div>
                     </form>
                 </div>
             </div>
